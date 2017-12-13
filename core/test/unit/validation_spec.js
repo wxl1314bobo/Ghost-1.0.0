@@ -28,7 +28,7 @@ describe('Validation', function () {
             validator.isEmptyOrURL('http://example.com/lol?somequery=<script>lalala</script>').should.be.false();
             /*jshint scripturl:false */
             validator.isEmptyOrURL('').should.be.true();
-            validator.isEmptyOrURL('http://localhost:2368').should.be.true();
+            validator.isEmptyOrURL('http://localhost:2370').should.be.true();
             validator.isEmptyOrURL('http://example.com/test/').should.be.true();
             validator.isEmptyOrURL('http://www.example.com/test/').should.be.true();
             validator.isEmptyOrURL('http://example.com/foo?somequery=bar').should.be.true();

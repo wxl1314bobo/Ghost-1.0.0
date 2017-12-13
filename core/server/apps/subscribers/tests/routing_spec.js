@@ -57,7 +57,7 @@ describe('Subscriber: Routing', function () {
                 .set('Content-type', 'application/x-www-form-urlencoded')
                 .send({
                     email: 'test@ghost.org',
-                    location: 'http://localhost:2368',
+                    location: 'http://localhost:2370',
                     confirm: ''
                 })
                 .expect(200)
@@ -74,13 +74,13 @@ describe('Subscriber: Routing', function () {
                 .set('Content-type', 'application/x-www-form-urlencoded')
                 .send({
                     email: 'alphabetazeta',
-                    location: 'http://localhost:2368',
+                    location: 'http://localhost:2370',
                     confirm: ''
                 })
                 .expect(200)
                 .end(function (err, res) {
                     should.not.exist(err);
-                    res.text.should.containEql('http://localhost:2368');
+                    res.text.should.containEql('http://localhost:2370');
                     res.text.should.not.containEql('Subscribed!');
                     res.text.should.not.containEql('alphabetazeta');
                     done();
@@ -108,7 +108,7 @@ describe('Subscriber: Routing', function () {
                 .set('Content-type', 'application/x-www-form-urlencoded')
                 .send({
                     email: 'test@ghost.org',
-                    location: 'http://localhost:2368'
+                    location: 'http://localhost:2370'
                 })
                 .expect(200)
                 .end(function (err, res) {

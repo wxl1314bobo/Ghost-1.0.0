@@ -193,14 +193,14 @@ describe('Mail: Ghostmailer', function () {
             mailer.from().should.equal('"Test" <ghost@default.com>');
 
             // Strip Port
-            configUtils.set({url: 'http://default.com:2368/', mail: {from: null}});
+            configUtils.set({url: 'http://default.com:2370/', mail: {from: null}});
             mailer.from().should.equal('"Test" <ghost@default.com>');
 
             settingsCache.get.restore();
             sandbox.stub(settingsCache, 'get').returns('Test"');
 
             // Escape title
-            configUtils.set({url: 'http://default.com:2368/', mail: {from: null}});
+            configUtils.set({url: 'http://default.com:2370/', mail: {from: null}});
             mailer.from().should.equal('"Test\\"" <ghost@default.com>');
         });
 
@@ -250,7 +250,7 @@ describe('Mail: Ghostmailer', function () {
         });
 
         it('should use default title if not theme title is provided', function () {
-            configUtils.set({url: 'http://default.com:2368/', mail: {from: null}});
+            configUtils.set({url: 'http://default.com:2370/', mail: {from: null}});
 
             mailer = new mail.GhostMailer();
 
